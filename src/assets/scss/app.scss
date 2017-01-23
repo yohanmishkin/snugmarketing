@@ -18,3 +18,41 @@ h6 {
 .top-spacer {
     padding-top: 10px;
 }
+
+// toggle desktop off and mobile on with max-width media query
+@media only screen and (max-width: #{$global-breakpoint}) {
+    .trigger-desktop{
+        display:none!important;
+        font-size:0!important; /*removing anything that can cause spacing or height*/
+        max-height:0!important; /*removing anything that can cause spacing or height*/
+        line-height:0!important; /*removing anything that can cause spacing or height*/
+        mso-hide: all!important; /*turning content off for outlook*/
+    }
+    .trigger-mobile{
+        display:block!important;
+        font-size: 12px!important; /*set to whatever is appropriate when turned on*/
+        max-height: none!important; /*set to whatever is appropriate when turned on*/
+        line-height: 1.5!important; /*set to whatever is appropriate when turned on*/
+        mso-hide: none!important;  /*resetting to on for outlook*/
+    }
+} 
+
+// toggle desktop on and mobile off MINIMUM WIDTH media query
+@media only screen and (min-width: #{$global-breakpoint}) {
+    .trigger-desktop{
+        display:block!important;
+        font-size:12px!important; 
+        max-height:none!important; 
+        line-height:1.5!important; 
+        overflow:auto;
+        mso-hide:none!important; 
+
+    }
+    .trigger-mobile{
+        display:none!important;
+        font-size: 0!important;
+        max-height: 0!important;
+        line-height: 0!important;
+        mso-hide: all!important; 
+    }
+}
