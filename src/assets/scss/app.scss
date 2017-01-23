@@ -2,3 +2,15 @@
 @import 'foundation-emails';
 
 @import 'template/template';
+
+h6 {
+    margin-bottom: 0px;
+}
+
+.no-padding-bottom {
+    padding-bottom: 0px !important;
+}
+
+.top-spacer {
+    padding-top: 10px;
+}
